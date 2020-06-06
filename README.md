@@ -175,7 +175,7 @@ positionX += speedX; // update the position of the box along the x-axis
 And to redraw the box in the new x-location we wrote:
 
 ```js
-$box.css("left", positionX);    // draw the box in the new location, positionX pixels away from the "left"
+$("#box").css("left", positionX);    // draw the box in the new location, positionX pixels away from the "left"
 ```
 
 1. In the HELPER FUNCTIONS section, declare two new functions called `repositionGameItem()` and `redrawGameItem()`.
@@ -186,8 +186,6 @@ $box.css("left", positionX);    // draw the box in the new location, positionX p
 
 Save your code and refresh the game. If you try pressing keys you'll notice that the box isn't moving. 
 
-**Question: why doesn't the box move yet? Try using the debugger to figure out why.**
-
 ## TODO 5: Update `speedX` and `speedY` with the Keyboard
 
 The box isn't moving yet because we initialized `speedX` and `speedY` to `0` and, so far, have no way of changing those values.
@@ -197,7 +195,7 @@ As long as `speedX` is `0`, the `gameItem` will not move along the x-axis. Same 
 Whenever we press a key, we want the `gameItem` to move in that direction. So, modify your `handleKeyDown` function such that when the `KEY.LEFT` key is pressed, the `speedX` is set to `-5`:
 
 ```js
-if (keycode === KEY.LEFT) {
+if (event.which === KEY.LEFT) {
   speedX = -5;
 }
 ```
