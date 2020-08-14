@@ -2,7 +2,6 @@
 
 **Table of Contents**
 - [Overview](#Overview)
-  - [Game Description](#game-description)
   - [Learning Objectives](#learning-objectives)
   - [Setup](#setup)
 - [TODOs](#todos)
@@ -18,9 +17,7 @@
 
 # Overview
 
-## Game Description
-
-In this project we will be building a simple program that allows us to control the movement of a box with the arrow keys. As a challenge, try limiting the movement of the "walker" to the boundaries of the board.
+In this project we will be building a simple program that allows us to control the movement of a box with the arrow keys. As a challenge, try limiting the movement of the "walker" to the boundaries of the board. Then, add a second "walker" and turn the program into a game of tag!
 
 ## Learning Objectives
 - Become familiar with the template repository
@@ -223,11 +220,13 @@ Ideally, the `gameItem` would stop moving once we release the arrow key. This `"
 
 ## Prevent the box from leaving the bounds of the board.
 
-## Make the box rotate whenever the space bar is pressed
-
-## Make the box change to a random color whenever the enter button is pressed
+How does this new concern relate to the existing concerns?
 
 ## Add a second player that can be controlled with WASD
 
-## Detect when the two players collide to make a "tag" game
+What will you need to add to the setup area? What will you need to add to the core logic? What new helper functions will you need?
+
+## Detect when the two players collide to make a "tag" game. 
+
+After the two players collide, make the player who is "it" turn red and move each player to the opposite corners of the screen.
 
