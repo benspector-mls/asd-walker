@@ -1,9 +1,10 @@
 # Box Walker
 
 **Table of Contents**
-- [Setup](#setup)
-- [Game Description](#game-description)
-- [Learning Objectives](#learning-objectives)
+- [Overview](#Overview)
+  - [Game Description](#game-description)
+  - [Learning Objectives](#learning-objectives)
+  - [Setup](#setup)
 - [TODOs](#todos)
   - [TODO 0: Understand the Template (no coding)](#todo-0-understand-the-template-no-coding)
   - [TODO 1: Register Keyboard Inputs](#todo-1-register-keyboard-inputs)
