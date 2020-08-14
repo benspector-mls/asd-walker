@@ -14,26 +14,31 @@
   - [TODO 6: Reset `speedX` and `speedY` on `"keyup"`](#todo-6-reset-speedx-and-speedy-on-keyup)
   - [Challenge Ideas](#challenge-ideas)
 
-# Setup
 
-To install this project, first clone the [template](https://github.com/benspector3/asd-template/) repository by entering these commands into your bash terminal:
+# Overview
+
+## Game Description
+
+In this project we will be building a simple program that allows us to control the movement of a box with the arrow keys. As a challenge, try limiting the movement of the "walker" to the boundaries of the board.
+
+## Learning Objectives
+- Become familiar with the template repository
+- Apply lesson on detecting keyboard inputs
+- Make connections to the Bouncing Box program and recognize patterns
+- Continue to practice using jQuery
+
+## Setup
+
+To install this project:
+
+1. Clone the [template](https://github.com/benspector3/asd-template/) repository by entering these commands into your bash terminal:
 
 ```bash
 git clone https://github.com/benspector3/asd-template.git
 rm -rf asd-template/.git
 ```
 
-Then, rename the folder to `box-walker`
-
-# Game Description
-
-In this project we will be building a simple program that allows us to control the movement of a box with the arrow keys.
-
-# Learning Objectives
-- Become familiar with the template repository
-- Apply lesson on detecting keyboard inputs
-- Make connections to the Bouncing Box program and recognize patterns
-- Continue to practice using jQuery
+2. Rename the folder to `walker`
 
 # TODOs
 
