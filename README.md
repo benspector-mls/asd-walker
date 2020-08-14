@@ -31,8 +31,9 @@ In this project we will be building a simple program that allows us to control t
 
 # Learning Objectives
 - Become familiar with the template repository
-- Learn a method for handling key events
-- Write code that will be useful for pong
+- Apply lesson on detecting keyboard inputs
+- Make connections to the Bouncing Box program and recognize patterns
+- Continue to practice using jQuery
 
 # TODOs
 
