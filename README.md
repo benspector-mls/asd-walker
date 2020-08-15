@@ -17,6 +17,8 @@
 
 # Overview
 
+<img src="img/walker-demo.png">
+
 In this project we will be building a simple program that allows us to control the movement of a box with the arrow keys. As a challenge, try limiting the movement of the "walker" to the boundaries of the board. Then, add a second "walker" and turn the program into a game of tag!
 
 ## Learning Objectives
