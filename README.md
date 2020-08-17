@@ -31,7 +31,7 @@ In this project we will be building a simple program that allows us to control t
 
 To install this project:
 
-1. Clone the [template](https://github.com/benspector3/asd-template/) repository by entering these commands into your bash terminal:
+1. Clone the [template](https://github.com/OperationSpark/asd-template) repository by entering these commands into your bash terminal:
 
 ```bash
 git clone https://github.com/benspector3/asd-template.git
