@@ -95,22 +95,33 @@ Look at the code written under each header. Remember:
 
 ## TODO 1: Register Keyboard Inputs
 
+**READ:**
 Open the `index.js` file. 
 
 Our first task is to make our game register `"keydown"` events and respond to them. We'll keep the response simple for now until we know that our code is working.
 
-Now, do the following:
-1. Find the event handler function `handleEvent` and change its name to `handleKeyDown`. Inside, add a `console.log()` statement to its `{code block}` that prints the keycode of the key pressed:
-2. At the top of the Core Logic, you will find where the event handler's are registered (you're looking for `$(document).on(...)`. Modify this code such that the event handler you just created is called in response to `"keydown"` events (you could also use `"keypress"`).
+In the SETUP section, find where the event handler's are registered (`$(document).on('eventType', handleEvent)`.
 
-**HINT:** How do you know _which_ key was pressed from the given `event` object?
+**CODE:**
+1. Modify the code such that, instead of calling `handleEvent`, it calls a different function: `handleKeyDown`.
+2. Make sure that it is called in response to `"keydown"` events.
+3. Find the event handler function `handleEvent` and change its name to `handleKeyDown`. Inside, add a `console.log()` statement to its `{code block}` that prints the keycode of the key pressed:
+
+Together, these components will look like this:
 
 ```js
+// SETUP...
+$(document).on('keydown', handleKeyDown);
+
+// CORE LOGIC...
 function handleKeyDown(event) {
   console.log(???);
 }
 ```
 
+**HINT:** How do you know _which_ key was pressed from the given `event` object? Check out <a href=keycode.info>keycode.info</a> for help!
+
+**READ:**
 Save your code and refresh your game. Open the running application in a new window (see below)
 
 <img src='img/pop-into-window.png' height=400>
@@ -121,8 +132,9 @@ Open the console, then press keys to make sure that the events are properly bein
 
 ## TODO 2: React to Specific Keycodes
 
-Now that we know our `"keydown"` events are being handled, let's figure out exactly _which_ keys are being pressed. Do the following:
+Now that we know our `"keydown"` events are being handled, let's figure out exactly _which_ keys are being pressed. 
 
+**CODE:**
 1. Declare a new _constant variable_ `KEY` in the INITALIZATION section and assign an Object to it. The object should map the following keys: `"LEFT"`, `"UP"`, `"RIGHT"`, `"DOWN"`, to their respective keycodes. For example, the keycode for the _Enter_ key is `13`:
 
 Example: 
@@ -149,6 +161,7 @@ Modify this function such that it can print out `"left pressed"` when the left a
 
 ## TODO 3: Declare `gameItem` Variables
 
+**READ:**
 Now that we can determine which keys are being pressed, we can move on to the problem of moving the `gameItem`. 
 
 This is actually a problem we've already solved in **Bouncing Box**. To move the box, we needed the following data:
@@ -160,6 +173,7 @@ var speedX = 0; // the speed for the box along the x-axis
 
 For this project, we want to be able to move along the x-axis _AND_ the y-axis.
 
+**CODE:**
 Declare 4 variables for the `gameItem` such that we can monitor and control the following information:
 - the x-coordinate location
 - the y-coordinate location
@@ -170,6 +184,7 @@ Declare 4 variables for the `gameItem` such that we can monitor and control the 
 
 ## TODO 4: Declare Some Helper Functions
 
+**READ:**
 Now that we have our data tracking in place, we need to use that data to actually move the `gameItem` on each `update`. Again, this is a problem solved in Bouncing Box:
 
 To reposition the box we wrote:
@@ -184,6 +199,7 @@ And to redraw the box in the new x-location we wrote:
 $("#box").css("left", positionX);    // draw the box in the new location, positionX pixels away from the "left"
 ```
 
+**CODE:**
 1. In the HELPER FUNCTIONS section, declare two new functions called `repositionGameItem()` and `redrawGameItem()`.
 2. Reference the code above to complete these two functions such that they can reposition and redraw the GameItem to move along the x-axis AND the y-axis. 
 2. Call each function on each `newFrame`.
@@ -194,11 +210,13 @@ Save your code and refresh the game. If you try pressing keys you'll notice that
 
 ## TODO 5: Update `speedX` and `speedY` with the Keyboard
 
-The box isn't moving yet because we initialized `speedX` and `speedY` to `0` and, so far, have no way of changing those values.
+**READ:**
+The box isn't moving yet because we initialized `speedX` and `speedY` to `0`. As long as `speedX` is `0`, the `gameItem` will not move along the x-axis. Same goes for `speedY` and the y-axis.
 
-As long as `speedX` is `0`, the `gameItem` will not move along the x-axis. Same goes for `speedY` and the y-axis.
+When we press a key, we want the `gameItem` to move in that direction which we can accomplish by, for example, setting `speedX` to some positive number when the right arrow is pressed and setting to a negative value when the left arrow is pressed. Then, on the following `newFrame`, the position of `gameItem` will be recalculated based on the the code we wrote in TODO 4.
 
-Whenever we press a key, we want the `gameItem` to move in that direction. So, modify your `handleKeyDown` function such that when the `KEY.LEFT` key is pressed, the `speedX` is set to `-5`:
+**CODE:**
+Modify your `handleKeyDown` function such that when the `KEY.LEFT` key is pressed, the `speedX` is set to `-5`:
 
 ```js
 if (event.which === KEY.LEFT) {
@@ -212,11 +230,14 @@ Do the same for the other 3 arrow keys.
 
 ## TODO 6: Reset `speedX` and `speedY` on `"keyup"`
 
+**READ:**
+
 We now have motion! However, the `gameItem` doesn't stop moving once we set it off. We need some way to stop it from moving. 
 
 Ideally, the `gameItem` would stop moving once we release the arrow key. This `"keyup"` event can be listened for in the same way that the `"keydown"` event can be listened for.
 
-**Similar to the code that you've already written, set up your program to listen for `"keyup"` events and set the `speedX` and `speedY` variables to `0` whenever the arrow keys are released**
+**CODE:**
+Similar to the code that you've already written in TODO 5, set up your program to listen for `"keyup"` events and set the `speedX` and `speedY` variables to `0` whenever the arrow keys are released.
 
 # Challenge Ideas:
 
