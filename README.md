@@ -119,7 +119,7 @@ function handleKeyDown(event) {
 }
 ```
 
-**HINT:** How do you know _which_ key was pressed from the given `event` object? Check out <a href=keycode.info>keycode.info</a> for help!
+**HINT:** How do you know _which_ key was pressed from the given `event` object? Check out <a href=https://keycode.info/>keycode.info</a> for help! (also check out <a href="https://www.w3schools.com/jsref/event_key_keycode.asp">w3Schools</a> for info on how to obtain the keycode for printing)
 
 **READ:**
 Save your code and refresh your game. Open the running application in a new window (see below)
