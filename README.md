@@ -205,6 +205,7 @@ $("#box").css("left", positionX);    // draw the box in the new location, positi
 2. Call each function on each `newFrame`.
 
 **HINT:** Use the `"top"` CSS property to draw the box `y` pixels from the `"top"`
+**HINT:** Check what the id of the GameItem is for your jQuery statements.
 
 Save your code and refresh the game. If you try pressing keys you'll notice that the box isn't moving. 
 
