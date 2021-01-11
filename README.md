@@ -4,6 +4,7 @@
 - [Overview](#Overview)
   - [Learning Objectives](#learning-objectives)
   - [Setup](#setup)
+  - [Project Grading](#project-grading)
 - [TODOs](#todos)
   - [TODO 0: Understand the Template (no coding)](#todo-0-understand-the-template-no-coding)
   - [TODO 1: Register Keyboard Inputs](#todo-1-register-keyboard-inputs)
@@ -39,6 +40,29 @@ rm -rf asd-template/.git
 ```
 
 2. Rename the folder to `walker`
+
+## Project Grading
+
+### Best Practices (30 points)
+
+1. All code in proper sections (setup, core, helpers, etc.) - 10 points
+2. Use comments to describe setup and functions - 10 points
+3. Use helper functions to separate concerns - 10 points
+**NOTE:** Incomplete programs will receive partial credit based on the number of TODOs completed with the above best practices in place.
+
+### Program Progress (70 points)
+
+* TODO 0 - 0 points, but important to go through anyway
+* TODO 1 - 10 points
+* TODO 2 - 15 points 
+* TODO 3 - 10 points 
+* TODO 4 - 10 points 
+* TODO 5 - 10 points 
+* TODO 6 - 15 points 
+* Challenge 1 - 5 points (bonus)
+* Challenge 2 - 5 points (bonus)
+* Challenge 3 - 10 points (bonus)
+**NOTE:** the bonus will not give you a score of over 100 should you earn that many points, but these challenges will help you out much later if you can do them.
 
 # TODOs
 
@@ -148,7 +172,7 @@ var KEY = {
 2. Now, modify your `handleKeyDown` function such that it can react differently to our target keys. For example, if I wanted to print out `"enter pressed"` when the _Enter_ key is pressed, I could write:
 
 ```js
-function handleKeyDown() {  
+function handleKeyDown(event) {  
   if (event.which === KEY.ENTER) {
     console.log("enter pressed");
   }
