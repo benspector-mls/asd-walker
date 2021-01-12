@@ -10,7 +10,7 @@
   - [TODO 1: Register Keyboard Inputs](#todo-1-register-keyboard-inputs)
   - [TODO 2: React to Specific Keycodes](#todo-2-react-to-specific-keycodes)
   - [TODO 3: Declare `gameItem` Variables](#todo-3-declare-gameitem-variables)
-  - [TODO 4: Declare Some Helper Function](#todo-4-declare-some-helper-functions)
+  - [TODO 4: Declare Some Helper Functions](#todo-4-declare-some-helper-functions)
   - [TODO 5: Update `speedX` and `speedY` with the Keyboard](#todo-5-update-speedX-and-speedY-with-the-keyboard)
   - [TODO 6: Reset `speedX` and `speedY` on `"keyup"`](#todo-6-reset-speedx-and-speedy-on-keyup)
   - [Challenge Ideas](#challenge-ideas)
