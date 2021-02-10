@@ -167,7 +167,7 @@ Open the console, then press keys to make sure that the events are properly bein
 Now that we know our `"keydown"` events are being handled, let's figure out exactly _which_ keys are being pressed. 
 
 **CODE:**
-1. Declare a new _constant variable_ `KEY` in the INITALIZATION section and assign an Object to it. The object should map the following keys: `"LEFT"`, `"UP"`, `"RIGHT"`, `"DOWN"`, to their respective keycodes. For example, the keycode for the _Enter_ key is `13`:
+1. Declare a new _constant variable_ `KEY` in the SETUP section and assign an Object to it. The object should map the following keys: `"LEFT"`, `"UP"`, `"RIGHT"`, `"DOWN"`, to their respective keycodes. For example, the keycode for the _Enter_ key is `13`:
 
 Example: 
 
