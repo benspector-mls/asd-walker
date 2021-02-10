@@ -41,6 +41,14 @@ rm -rf asd-template/.git
 
 2. Rename the folder to `walker`
 
+## Push Reminder
+To push to GitHub, enter the following commands in bash:
+```
+git add -A
+git commit -m "saving walker"
+git push
+```
+
 ## Project Grading
 
 ### Best Practices (30 points)
