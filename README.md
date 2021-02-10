@@ -121,7 +121,7 @@ _Note: There are also `right` and `bottom` properties but we'll stick with `top`
 ### The `index.js` file
 
 Look at the code written under each header. Remember:
-- Initialization: variable declarations, any one-off statements needed to start the program
+- Setup: variable declarations, any one-off statements needed to start the program
 - Core Logic: The main logic driving the program. Should delegate work to helper functions.
 - Helper Functions: functions that help implement the core logic.
 
