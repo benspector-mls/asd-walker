@@ -205,6 +205,9 @@ var speedX = 0; // the speed for the box along the x-axis
 
 For this project, we want to be able to move along the x-axis _AND_ the y-axis.
 
+**FIND:**
+Because this involves variable declarations global to the project, it should go up in the SETUP section.
+
 **CODE:**
 Declare 4 variables for the `gameItem` such that we can monitor and control the following information:
 - the x-coordinate location
