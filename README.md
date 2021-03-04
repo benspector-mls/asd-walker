@@ -289,3 +289,11 @@ What will you need to add to the setup area? What will you need to add to the co
 
 After the two players collide, make the player who is "it" turn red and move each player to the opposite corners of the screen.
 
+# Submit Your Work
+
+As always, once you are finished, you will need to push your work. You can use `git add <folder-name>`(with `<folder-name>` meaning your Walker folder name) to specifically add only the Walker project or you can use `git add -A` to add all of your files to the commit.
+
+After that, you should use `git commit -m "adding walker"` to commit your work.
+
+Finally, use `git push` to push your work to GitHub.
+
