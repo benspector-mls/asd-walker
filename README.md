@@ -56,6 +56,7 @@ git push
 1. All code in proper sections (setup, core, helpers, etc.) - 10 points
 2. Use comments to describe setup and functions - 10 points
 3. Use helper functions to separate concerns - 10 points
+
 **NOTE:** Incomplete programs will receive partial credit based on the number of TODOs completed with the above best practices in place.
 
 ### Program Progress (70 points)
