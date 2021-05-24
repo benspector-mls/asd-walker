@@ -3,7 +3,6 @@
 **Table of Contents**
 - [Overview](#Overview)
   - [Learning Objectives](#learning-objectives)
-  - [Setup](#setup)
   - [Project Grading](#project-grading)
 - [TODOs](#todos)
   - [TODO 0: Understand the Template (no coding)](#todo-0-understand-the-template-no-coding)
@@ -14,7 +13,7 @@
   - [TODO 5: Update `speedX` and `speedY` with the Keyboard](#todo-5-update-speedX-and-speedY-with-the-keyboard)
   - [TODO 6: Reset `speedX` and `speedY` on `"keyup"`](#todo-6-reset-speedx-and-speedy-on-keyup)
   - [Challenge Ideas](#challenge-ideas)
-
+  - [Submit Your Work](#submit-your-work)
 
 # Overview
 
@@ -27,19 +26,6 @@ In this project we will be building a simple program that allows us to control t
 - Apply lesson on detecting keyboard inputs
 - Make connections to the Bouncing Box program and recognize patterns
 - Continue to practice using jQuery
-
-## Setup
-
-To install this project:
-
-1. Clone the [template](https://github.com/OperationSpark/asd-template) repository by entering these commands into your bash terminal:
-
-```bash
-git clone https://github.com/OperationSpark/asd-template
-rm -rf asd-template/.git
-```
-
-2. Rename the folder to `walker`
 
 ## Push Reminder
 To push to GitHub, enter the following commands in bash:
@@ -292,9 +278,11 @@ After the two players collide, make the player who is "it" turn red and move eac
 
 # Submit Your Work
 
-As always, once you are finished, you will need to push your work. You can use `git add <folder-name>`(with `<folder-name>` meaning your Walker folder name) to specifically add only the Walker project or you can use `git add -A` to add all of your files to the commit.
+Submit your work regularly. Because these files are already being tracked by your GitHub repo, you can skip the "git add" step. Instead, enter the following commands:
 
-After that, you should use `git commit -m "adding walker"` to commit your work.
+```bash
+git commit -a -m "saving walker"
+git push
+```
 
-Finally, use `git push` to push your work to GitHub.
-
+Congratulations on completing Walker!
