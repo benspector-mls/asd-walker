@@ -284,9 +284,8 @@ After the two players collide, make the player who is "it" turn red and move eac
 
 Submit your work regularly. Because these files are already being tracked by your GitHub repo, you can skip the "git add" step. Instead, enter the following commands:
 
->```bash
 >git commit -a -m "saving walker"
+>
 >git push
->```
 
 Congratulations on completing Walker!
