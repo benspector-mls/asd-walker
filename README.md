@@ -84,7 +84,7 @@ This produces a basic game board with a single game item on the board. If you ne
 
 All elements will have unique `id` attributes, which means that you can select them using the appropriate CSS selectors whenever using jQuery or CSS.
 
-* **1a.** Change the `id` of `'gameItem'` to be `'walker'`
+* **1a)** Change the `id` of `'gameItem'` to be `'walker'`
 
 <hr>
 
@@ -98,9 +98,9 @@ The games we will build this semester will all use 2D graphics since we are limi
 
 Finally: Be aware that rectangles can be made into circles by adding a `border-radius` property.
 
-* **1b.** Change the id selector `#gameItem` to `#walker` so that it matches the HTML
+* **1b)** Change the id selector `#gameItem` to `#walker` so that it matches the HTML
 
-* **1c.** Add a `border-radius` property to the `#walker`. To make it a perfect circle, set the `border-radius` to the same value as the `width` and `height`. **You do not need to make it a perfect circle, but you do need at least a small bit of curvature.**
+* **1c)** Add a `border-radius` property to the `#walker`. To make it a perfect circle, set the `border-radius` to the same value as the `width` and `height`. **You do not need to make it a perfect circle, but you do need at least a small bit of curvature.**
 
 <hr>
 
@@ -121,9 +121,9 @@ Our first task is to make our game register `"keydown"` events and respond to th
 In the SETUP section, find where the event handler's are registered (`$(document).on('eventType', handleEvent)`.
 
 **CODE:**
-* **2a.** Modify the code such that, instead of calling `handleEvent`, it calls a different function: `handleKeyDown`.
-* **2b.** Make sure that it is called in response to `"keydown"` events.
-* **2c.** Find the event handler function `handleEvent` and change its name to `handleKeyDown`. Inside, add a `console.log()` statement to its `{code block}` that prints the keycode of the key pressed:
+* **2a)** Modify the code such that, instead of calling `handleEvent`, it calls a different function: `handleKeyDown`.
+* **2b)** Make sure that it is called in response to `"keydown"` events.
+* **2c)** Find the event handler function `handleEvent` and change its name to `handleKeyDown`. Inside, add a `console.log()` statement to its `{code block}` that prints the keycode of the key pressed:
 
 Together, these components will look like this:
 
@@ -153,7 +153,7 @@ function handleKeyDown(event) {
 
 Now that we know our `"keydown"` events are being handled, let's figure out exactly _which_ keys are being pressed. 
 
-* **3a.** Declare a new _constant variable_ `KEY` in the SETUP section and assign an Object to it. The object should map the following keys: `"LEFT"`, `"UP"`, `"RIGHT"`, `"DOWN"`, to their respective keycodes. For example, the keycode for the _Enter_ key is `13`:
+* **3a)** Declare a new _constant variable_ `KEY` in the SETUP section and assign an Object to it. The object should map the following keys: `"LEFT"`, `"UP"`, `"RIGHT"`, `"DOWN"`, to their respective keycodes. For example, the keycode for the _Enter_ key is `13`:
 
     Example: 
 
@@ -163,7 +163,7 @@ Now that we know our `"keydown"` events are being handled, let's figure out exac
     }
     ```
 
-* **3b.** Now, modify your `handleKeyDown` function such that it can react differently to our target keys. For example, if I wanted to print out `"enter pressed"` when the _Enter_ key is pressed, I could write:
+* **3b)** Now, modify your `handleKeyDown` function such that it can react differently to our target keys. For example, if I wanted to print out `"enter pressed"` when the _Enter_ key is pressed, I could write:
 
     ```js
     function handleKeyDown(event) {  
@@ -196,7 +196,7 @@ var speedX = 0; // the speed for the box along the x-axis
 Because this involves variable declarations global to the project, it should go up in the SETUP section.
 
 **CODE:**
-* **4a.** Declare 4 variables for the `walker` game item such that we can monitor and control the following information:
+* **4a)** Declare 4 variables for the `walker` game item such that we can monitor and control the following information:
    * the x-coordinate location
    * the y-coordinate location
    * the speed along the x-axis
@@ -204,7 +204,7 @@ Because this involves variable declarations global to the project, it should go 
 <br>
 <br>
 
-* **4b.** Initialize each variable to hold the value `0`
+* **4b)** Initialize each variable to hold the value `0`
 
 ## TODO 5: Declare Some Helper Functions
 
@@ -226,9 +226,9 @@ Now that we have our data tracking in place, we need to use that data to actuall
 >```
 
 **CODE:**
-* **5a.** In the HELPER FUNCTIONS section, declare two new functions called `repositionGameItem()` and `redrawGameItem()`.
-* **5b.** Reference the code above to complete these two functions such that they can reposition and redraw the GameItem to move along the x-axis AND the y-axis. 
-* **5c.** Call each function on each `newFrame`.
+* **5a)** In the HELPER FUNCTIONS section, declare two new functions called `repositionGameItem()` and `redrawGameItem()`.
+* **5b)** Reference the code above to complete these two functions such that they can reposition and redraw the GameItem to move along the x-axis AND the y-axis. 
+* **5c)** Call each function on each `newFrame`.
 
 **HINT:** Use the `"top"` CSS property to draw the box `y` pixels from the `"top"`
 **HINT:** Check what the id of the GameItem is for your jQuery statements.
@@ -243,7 +243,7 @@ The box isn't moving yet because we initialized `speedX` and `speedY` to `0`. As
 When we press a key, we want the `walker` game item to move in that direction which we can accomplish by, for example, setting `speedX` to some positive number when the right arrow is pressed and setting to a negative value when the left arrow is pressed. Then, on the following `newFrame`, the position of the `walker` game item will be recalculated based on the the code we wrote in TODO 4.
 
 **CODE:**
-* **6a.** Modify your `handleKeyDown` function such that when the `KEY.LEFT` key is pressed, the `speedX` is set to `-5`:
+* **6a)** Modify your `handleKeyDown` function such that when the `KEY.LEFT` key is pressed, the `speedX` is set to `-5`:
 
 ```js
 if (event.which === KEY.LEFT) {
@@ -251,7 +251,7 @@ if (event.which === KEY.LEFT) {
 }
 ```
 
-* **6b.** Do the same for the other 3 arrow keys.
+* **6b)** Do the same for the other 3 arrow keys.
 
 >**Question: Why does the box only move diagonally after your press the keys?**
 
@@ -264,7 +264,7 @@ We now have motion! However, the `walker` game item doesn't stop moving once we 
 Ideally, the `walker` game item would stop moving once we release the arrow key. This `"keyup"` event can be listened for in the same way that the `"keydown"` event can be listened for.
 
 **CODE:**
-* **7a.** Similar to the code that you've already written in TODO 5, set up your program to listen for `"keyup"` events and set the `speedX` and `speedY` variables to `0` whenever the arrow keys are released.
+* **7a)** Similar to the code that you've already written in TODO 5, set up your program to listen for `"keyup"` events and set the `speedX` and `speedY` variables to `0` whenever the arrow keys are released.
 
 # Challenge Ideas:
 
