@@ -231,6 +231,7 @@ Now that we have our data tracking in place, we need to use that data to actuall
 * **5c)** Call each function on each `newFrame`.
 
 **HINT:** Use the `"top"` CSS property to draw the box `y` pixels from the `"top"`
+
 **HINT:** Check what the id of the GameItem is for your jQuery statements.
 
 >Save your code and refresh the game. If you try pressing keys you'll notice that the box isn't moving. 
