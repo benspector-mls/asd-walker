@@ -25,8 +25,8 @@ In this project we will be building a simple program that allows us to control t
 ## Learning Objectives
 - Become familiar with the template repository
 - Apply lesson on detecting keyboard inputs
-- Make connections to the Bouncing Box program and recognize patterns
-- Continue to practice using jQuery
+- Make connections and recognize patterns
+- Continue to practice using the DOM API
 
 ## Push Reminder
 To push to GitHub, enter the following commands in bash:
@@ -62,6 +62,52 @@ git push
 
 # Lesson Steps
 
+## TODO 0: Understand the DOM API and `setInterval()`
+
+### The DOM API
+
+DOM stands for "**D**ocument **O**bject **M**odel" and it is a data representation of the HTML elements on your page. Think of that. Each HTML element on your page, represented as data, that we can manipulate using JavaScript!
+
+The DOM has an API (a set of methods) that is attached to a globally available object called `document`. Using the `document` object's methods, we can:
+* Access HTML elements
+* Change their inner HTML (the text they show)
+* Modify their attributes (set classes or ids)
+* Modify their CSS
+* Much more!
+
+Consider this code which grabs an element by its id, changes the background color to purple, and sets the text to say `"Hello World"`!
+
+```js
+let myElement = document.querySelector('#my-element')
+myElement.style.background = 'purple';
+myElement.innerHTML = 'Hello World!';
+```
+
+In this project, we'll learn how to manipulate an element with our keyboard so that it moves around the screen!
+
+### `setInterval()`
+
+If we intend to make a game, we need to understand how animation works. Animated videos work by stitching together a series of **frames** that each are a little bit different from the last. When played in quick succession, they appear to move fluidly, like a flipbook!
+
+![](./img/flipbook.gif)
+
+To achieve this in a program, we can write a function called `newFrame()` that draws a new frame for our video game. Then, like a flipbook, we need some way of flipping through all of those drawings.
+
+This is where `setTimeout` comes in. `setTimeout` is a built in function that accepts two values: a _callback function_ and a timed interval:
+
+```js
+function newFrame() {
+  console.log("Drawing a new frame!")
+}
+setInterval(doSomething, 1000)
+```
+
+The code above will execute `newFrame` every `1000` milliseconds (every `1` second!
+
+If instead of printing out a value, we made our `newFrame()` function move an element around our screen using the DOM API, we will end up with an animated video game.
+
+If this is going over your head, you will see how it works as we implement this program.
+
 ## TODO 1: Understand the Template and Change the Box
 
 Let's begin by going through the existing code of the template and making a few minor changes
@@ -82,9 +128,9 @@ The body only has 2 elements: the `#board` and a single `#gameItem`. It should l
 
 This produces a basic game board with a single game item on the board. If you need/want to add more, then you will need to place them on the board. 
 
-All elements will have unique `id` attributes, which means that you can select them using the appropriate CSS selectors whenever using jQuery or CSS.
+All elements will have unique `id` attributes, which means that you can select them using the appropriate CSS selectors whenever using the DOM API or CSS.
 
-* **1a)** Change the `id` of `'gameItem'` to be `'walker'`
+* **TODO 1a)** Change the `id` of `'gameItem'` to be `'walker'`
 
 <hr>
 
@@ -98,9 +144,9 @@ The games we will build this semester will all use 2D graphics since we are limi
 
 Finally: Be aware that rectangles can be made into circles by adding a `border-radius` property.
 
-* **1b)** Change the id selector `#gameItem` to `#walker` so that it matches the HTML
+* **TODO 1b)** Change the id selector `#gameItem` to `#walker` so that it matches the HTML
 
-* **1c)** Add a `border-radius` property to the `#walker`. To make it a perfect circle, set the `border-radius` to the same value as the `width` and `height`. **You do not need to make it a perfect circle, but you do need at least a small bit of curvature.**
+* **TODO 1c)** Add a `border-radius` property to the `#walker`. To make it a perfect circle, set the `border-radius` to the same value as the `width` and `height`. **You do not need to make it a perfect circle, but you do need at least a small bit of curvature.**
 
 <hr>
 
@@ -118,7 +164,7 @@ Open the `index.js` file.
 
 Our first task is to make our game register `"keydown"` events and respond to them. We'll keep the response simple for now until we know that our code is working.
 
-In the SETUP section, find where the event handler's are registered (`$(document).on('eventType', handleEvent)`.
+In the SETUP section, find where the event handlers are registered (`document.addEventListener()`).
 
 **CODE:**
 * **2a)** Modify the code such that, instead of calling `handleEvent`, it calls a different function: `handleKeyDown`.
@@ -129,7 +175,7 @@ Together, these components will look like this:
 
 ```js
 // SETUP...
-$(document).on('keydown', handleKeyDown);
+document.addEventListener('keydown', handleKeyDown);
 
 // CORE LOGIC...
 function handleKeyDown(event) {
@@ -142,8 +188,6 @@ function handleKeyDown(event) {
 <hr> 
 
 >**TESTING:** Save your code and refresh your game. Open the running application in a new window (see below)
->
-><img src='img/pop-into-new-window.png' height=400>
 >
 >Open the console, then press keys to make sure that the events are properly being registered.
 >
@@ -159,7 +203,7 @@ Now that we know our `"keydown"` events are being handled, let's figure out exac
 
     ```js
     var KEY = {
-    "ENTER": 13,
+      "ENTER": 13,
     }
     ```
 
@@ -179,21 +223,14 @@ Now that we know our `"keydown"` events are being handled, let's figure out exac
 
 ## TODO 4: Declare `walker` Variables
 
-Now that we can determine which keys are being pressed, we can move on to the problem of moving the `walker` game item. 
-
-This is actually a problem we've already solved in **Bouncing Box**. To move the box, we needed the following data:
-
-```js
-var positionX = 0; // the x-coordinate location for the box
-var speedX = 0; // the speed for the box along the x-axis
-```
-
->NOTE: The above code was for *Bouncing Box*, not for Walker, but the idea is the same.
->
->For this project, we want to be able to move along the x-axis _AND_ the y-axis.
+Now that we can determine which keys are being pressed, we can move on to the problem of moving the `walker` game item. To control the movement and position of an element on the screen, we need:
+* its x-coordinate location
+* its y-coordinate location
+* its speed along the x axis
+* its speed along the y axis
 
 **FIND:**
-Because this involves variable declarations global to the project, it should go up in the SETUP section.
+Because this involves variable declarations global to the project, it should go up in the SETUP section under `Game Item Objects`.
 
 **CODE:**
 * **4a)** Declare 4 variables for the `walker` game item such that we can monitor and control the following information:
@@ -201,38 +238,31 @@ Because this involves variable declarations global to the project, it should go 
    * the y-coordinate location
    * the speed along the x-axis
    * the speed along the y-axis
-<br>
-<br>
 
 * **4b)** Initialize each variable to hold the value `0`
 
 ## TODO 5: Declare Some Helper Functions
 
 **READ:**
-Now that we have our data tracking in place, we need to use that data to actually move the `walker` game item on each `update`. This is a problem solved in Bouncing Box.
+Now that we have our data tracking in place, we need to use that data to actually move the `walker` game item on each invocation of `newFrame`. 
 
->>**REMINDER:** The below code snippets are taken directly from *Bouncing Box* and are not the exact code that you should use here. They are merely *examples* of how to solve a similar but simpler problem.
->
->To reposition the box in Bouncing Box we wrote:
->
->```js
->positionX += speedX; // update the position of the box along the x-axis
->```
->
->And to redraw the box in the new x-location we wrote:
->
->```js
->$("#box").css("left", positionX);    // draw the box in the new location, positionX pixels away from the "left"
->```
+The logic for repositioning an element using the DOM API looks like this:
+
+```js
+// Calculate the game item's next position
+x += speedX;
+y += speedY;
+
+// Redraw the game item in the new location
+let gameItem = document.querySelector('#gameItem')
+gameItem.style.left = x + 'px';
+gameItem.style.top = y + 'px';
+```
 
 **CODE:**
 * **5a)** In the HELPER FUNCTIONS section, declare two new functions called `repositionGameItem()` and `redrawGameItem()`.
 * **5b)** Reference the code above to complete these two functions such that they can reposition and redraw the GameItem to move along the x-axis AND the y-axis. 
 * **5c)** Call each function on each `newFrame`.
-
-**HINT:** Use the `"top"` CSS property to draw the box `y` pixels from the `"top"`
-
-**HINT:** Check what the id of the GameItem is for your jQuery statements.
 
 >Save your code and refresh the game. If you try pressing keys you'll notice that the box isn't moving. 
 
