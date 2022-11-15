@@ -102,7 +102,7 @@ function newFrame() {
 setInterval(doSomething, 1000)
 ```
 
-The code above will execute `newFrame` every `1000` milliseconds (every `1` second!
+The code above will execute `newFrame` every `1000` milliseconds (every `1` second)!
 
 If instead of printing out a value, we made our `newFrame()` function move an element around our screen using the DOM API, we will end up with an animated video game.
 
