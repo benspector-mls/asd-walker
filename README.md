@@ -99,7 +99,7 @@ This is where `setTimeout` comes in. `setTimeout` is a built in function that ac
 function newFrame() {
   console.log("Drawing a new frame!")
 }
-setInterval(doSomething, 1000)
+setInterval(newFrame, 1000)
 ```
 
 The code above will execute `newFrame` every `1000` milliseconds (every `1` second)!
